@@ -49,22 +49,22 @@
   display: grid;
   place-items: start center;
   padding: clamp(40px, 6vw, 76px) clamp(24px, 6vw, 80px);
-  background: var(--crema);
-  color: var(--negro);
+  background: var(--fondo-formulario);
+  color: var(--texto-formulario);
 }
 
 .reserva-formulario-contenido { width: min(100%, 650px); }
 .reserva-formulario h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 8px; }
-.reserva-formulario-contenido > p { color: #747474; margin-bottom: 26px; }
+.reserva-formulario-contenido > p { color: var(--texto-secundario-formulario); margin-bottom: 26px; }
 
 .reserva-campos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px 16px;
   padding: 22px;
-  border: 1px solid #e7e5e1;
+  border: 1px solid var(--borde-campos);
   border-radius: 16px;
-  background: #fff;
+  background: var(--fondo-campos);
   box-shadow: 0 8px 28px rgba(0, 0, 0, .06);
 }
 
@@ -75,10 +75,10 @@
   width: 100%;
   min-height: 48px;
   padding: 10px 12px;
-  border: 1px solid #dededb;
+  border: 1px solid var(--borde-campos);
   border-radius: 10px;
-  background: #fff;
-  color: var(--negro);
+  background: var(--fondo-campos);
+  color: var(--texto-formulario);
   font: inherit;
 }
 
@@ -87,7 +87,7 @@
   outline: 3px solid rgba(232, 88, 31, .17);
 }
 
-.reserva-nota { margin: 18px 0; color: #777; font-size: 13px; }
+.reserva-nota { margin: 18px 0; color: var(--texto-secundario-formulario); font-size: 13px; }
 .reserva-acciones { display: flex; gap: 12px; }
 
 .reserva-volver,
@@ -124,9 +124,10 @@
 .confirmacion-tarjeta {
   width: min(100%, 500px);
   padding: clamp(28px, 7vw, 48px);
-  border: 1px solid rgba(255, 255, 255, .12);
+  border: 1px solid rgba(128, 128, 128, .25);
   border-radius: 20px;
-  background: var(--negro);
+  background: var(--fondo-confirmacion);
+  color: var(--texto-confirmacion);
   text-align: center;
   box-shadow: 0 24px 80px rgba(0, 0, 0, .4);
 }
@@ -146,7 +147,7 @@
 
 .confirmacion-tarjeta .etiqueta { display: block; margin-bottom: 8px; }
 .confirmacion-tarjeta h1 { margin-bottom: 12px; font-size: clamp(26px, 6vw, 34px); }
-.confirmacion-tarjeta > p:not(.etiqueta) { margin-bottom: 24px; color: #d0d0d0; }
+.confirmacion-tarjeta > p:not(.etiqueta) { margin-bottom: 24px; color: var(--texto-secundario-confirmacion); }
 .confirmacion-tarjeta .reserva-enviar { width: 100%; }
 
 .reserva-footer {
