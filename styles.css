@@ -182,7 +182,6 @@ body:has(#tema-oscuro:focus-visible) .selector-tema {
   z-index: 1;
 }
 .tarjeta img { height: 220px; background: #ddd; }
-.tarjeta img.imagen-refrescos { object-fit: cover; object-position: center; }
 .tarjeta-texto { padding: 16px; }
 .tarjeta h3 { font-size: 15px; margin-bottom: 6px; }
 .tarjeta p { font-size: 12px; color: var(--texto-secundario-tarjeta); margin-bottom: 10px; }
