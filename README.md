@@ -48,3 +48,9 @@ En `index.html` se encuentra la presentación del restaurante:
 - Fuentes Archivo Black y DM Sans, cargadas desde Google Fonts.
 
 Bootstrap y Google Fonts se cargan desde internet, por lo que esas dependencias visuales externas requieren conexión. 
+
+## W3C CSS VALIDATOR
+
+Después de pasar nuestro archivo styles.css por el W3C CSS VALIDATOR este es el resultado:
+
+<img width="1915" height="917" alt="Validación" src="https://github.com/user-attachments/assets/51352b41-bc1d-4864-b5ee-4255f4e2dbb3" />
