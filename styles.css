@@ -19,7 +19,7 @@ a { color: inherit; text-decoration: none; }
 img { display: block; width: 100%; object-fit: cover; }
 h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
  
-/* ---------- Botones ---------- */
+
 .boton {
   display: inline-block;
   padding: 12px 26px;
@@ -32,25 +32,25 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
 .boton-borde { border-color: var(--blanco); color: var(--blanco); }
 .boton-pequeno { padding: 8px 18px; font-size: 12px; }
  
-/* ---------- Navegación ---------- */
-.nav {
+
+.site-navbar {
   position: absolute;
   top: 0; left: 0; right: 0;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 6%;
+  padding: 14px 6%;
   background: rgba(0, 0, 0, .75);
 }
-.nav nav { display: flex; gap: 28px; font-size: 13px; }
-.nav nav a { color: #cfcfcf; }
-.nav nav a:first-child { color: var(--blanco); font-weight: 700; }
+.site-navbar .navbar-nav { font-size: 13px; }
+.site-navbar .nav-link { color: #cfcfcf; }
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active { color: var(--blanco); }
+.site-navbar .navbar-toggler { border-color: rgba(255, 255, 255, .5); }
+.site-navbar .navbar-toggler:focus { box-shadow: 0 0 0 .15rem rgba(255, 255, 255, .35); }
  
 .logo { font-family: "Archivo Black", sans-serif; color: var(--naranja); font-size: 20px; }
 .logo span { color: var(--blanco); }
  
-/* ---------- Hero ---------- */
+
 .hero {
   min-height: 75vh;
   display: flex;
@@ -68,7 +68,7 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
 .hero p { color: #e0e0e0; margin-bottom: 28px; }
 .hero-botones { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
  
-/* ---------- Menú ---------- */
+
 .menu {
   background: var(--crema);
   color: var(--negro);
@@ -77,8 +77,22 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
 }
 .menu h2 { font-size: 28px; margin-bottom: 26px; }
  
+.menu-categorias { min-width: 0; padding: 0; border: 0; }
+.visualmente-oculto,
+.filtro-opcion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .filtros { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
 .filtro {
+  display: inline-block;
   font-family: inherit;
   font-weight: 700;
   font-size: 12px;
@@ -89,7 +103,16 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
   color: var(--blanco);
   cursor: pointer;
 }
-.filtro.activo { background: var(--naranja); }
+.menu-categorias #categoria-hamburguesas:checked ~ .filtros label[for="categoria-hamburguesas"],
+.menu-categorias #categoria-entrantes:checked ~ .filtros label[for="categoria-entrantes"],
+.menu-categorias #categoria-postres:checked ~ .filtros label[for="categoria-postres"],
+.menu-categorias #categoria-bebidas:checked ~ .filtros label[for="categoria-bebidas"] { background: var(--naranja); }
+.filtro-opcion:focus-visible ~ .filtros label { outline: 2px solid var(--naranja); outline-offset: 3px; }
+
+.menu-categorias #categoria-hamburguesas:checked ~ .tarjetas .tarjeta:not([data-category="hamburguesas"]),
+.menu-categorias #categoria-entrantes:checked ~ .tarjetas .tarjeta:not([data-category="entrantes"]),
+.menu-categorias #categoria-postres:checked ~ .tarjetas .tarjeta:not([data-category="postres"]),
+.menu-categorias #categoria-bebidas:checked ~ .tarjetas .tarjeta:not([data-category="bebidas"]) { display: none; }
  
 .tarjetas {
   display: grid;
@@ -106,12 +129,20 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
   box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
 }
 .tarjeta img { height: 220px; background: #ddd; }
+.tarjeta-imagen-pendiente {
+  height: 220px;
+  display: grid;
+  place-items: center;
+  background: #ddd;
+  color: #555;
+  font-size: 12px;
+}
 .tarjeta-texto { padding: 16px; }
 .tarjeta h3 { font-size: 15px; margin-bottom: 6px; }
 .tarjeta p { font-size: 12px; color: var(--gris); margin-bottom: 10px; }
 .tarjeta strong { font-size: 14px; }
  
-/* ---------- Sobre nosotros ---------- */
+
 .nosotros {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -130,7 +161,7 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
 .nosotros h2 em { color: var(--naranja); font-style: normal; }
 .nosotros p { color: #d0d0d0; font-size: 14px; max-width: 400px; }
  
-/* ---------- Footer ---------- */
+
 .footer { padding: 60px 6% 24px; }
 .footer-columnas {
   display: grid;
@@ -154,9 +185,8 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
 }
 .redes { display: flex; gap: 12px; }
  
-/* ---------- Móvil ---------- */
+
 @media (max-width: 760px) {
-  .nav nav { display: none; }
   .nosotros { grid-template-columns: 1fr; }
   .footer-columnas { grid-template-columns: 1fr; }
   .footer-base { flex-direction: column; gap: 10px; }

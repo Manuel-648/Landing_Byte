@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BITE Burgers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,15 +13,22 @@
 <body>
  
   <!-- NAVBAR -->
-  <header class="nav">
-    <a href="#" class="logo">BITE<span>.</span></a>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#menu">Menú</a>
-      <a href="#nosotros">Sobre Nosotros</a>
-      <a href="#ubicacion">Ubicación</a>
-    </nav>
-    <a href="#" class="boton boton-naranja boton-pequeno">Pedir ahora</a>
+  <header class="site-navbar navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a href="#inicio" class="navbar-brand logo order-lg-1">BITE<span>.</span></a>
+      <a href="#menu" class="boton boton-naranja boton-pequeno order-lg-3 ms-auto ms-lg-0 me-1 me-lg-0">Pedir ahora</a>
+      <button class="navbar-toggler order-lg-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBite" aria-controls="navbarBite" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse order-lg-2" id="navbarBite" aria-label="Navegación principal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
  
   <!-- HERO -->
@@ -39,16 +47,21 @@
   <section class="menu" id="menu">
     <h2>Nuestro menú</h2>
  
-    <div class="filtros">
-      <button class="filtro activo">Todo</button>
-      <button class="filtro">Hamburguesas</button>
-      <button class="filtro">Entrantes</button>
-      <button class="filtro">Postres</button>
-      <button class="filtro">Bebidas</button>
-    </div>
- 
-    <div class="tarjetas">
-      <article class="tarjeta">
+    <fieldset class="menu-categorias">
+      <legend class="visualmente-oculto">Filtrar productos por categoría</legend>
+      <input class="filtro-opcion" type="radio" name="categoria-menu" id="categoria-hamburguesas" checked>
+      <input class="filtro-opcion" type="radio" name="categoria-menu" id="categoria-entrantes">
+      <input class="filtro-opcion" type="radio" name="categoria-menu" id="categoria-postres">
+      <input class="filtro-opcion" type="radio" name="categoria-menu" id="categoria-bebidas">
+      <div class="filtros">
+        <label class="filtro" for="categoria-hamburguesas">Hamburguesas</label>
+        <label class="filtro" for="categoria-entrantes">Entrantes</label>
+        <label class="filtro" for="categoria-postres">Postres</label>
+        <label class="filtro" for="categoria-bebidas">Bebidas</label>
+      </div>
+
+      <div class="tarjetas">
+      <article class="tarjeta" data-category="hamburguesas">
         <img src="images/classic_burguer.jpg" alt="Classic Burger">
         <div class="tarjeta-texto">
           <h3>Classic Burger</h3>
@@ -57,7 +70,7 @@
         </div>
       </article>
  
-      <article class="tarjeta">
+      <article class="tarjeta" data-category="hamburguesas">
         <img src="images/BBQ_burguer.jpg" alt="BBQ Burger">
         <div class="tarjeta-texto">
           <h3>BBQ Burger</h3>
@@ -66,7 +79,7 @@
         </div>
       </article>
  
-      <article class="tarjeta">
+      <article class="tarjeta" data-category="hamburguesas">
         <img src="images/chicken_burguer.jpg" alt="Chicken Burger">
         <div class="tarjeta-texto">
           <h3>Chicken Burger</h3>
@@ -75,7 +88,7 @@
         </div>
       </article>
  
-      <article class="tarjeta">
+      <article class="tarjeta" data-category="hamburguesas">
         <img src="images/veggie_burguer.jpg" alt="Veggie Burger">
         <div class="tarjeta-texto">
           <h3>Veggie Burger</h3>
@@ -83,7 +96,107 @@
           <strong>12,00 €</strong>
         </div>
       </article>
-    </div>
+
+      <article class="tarjeta" data-category="entrantes">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Patatas fritas"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Patatas fritas gratinadas con queso y bacon</h3>
+          <p>Patatas doradas y crujientes, perfectas para compartir.</p>
+          <strong>4,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="entrantes">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Aros de cebolla"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Aros de cebolla</h3>
+          <p>Aros crujientes acompañados de nuestra salsa especial.</p>
+          <strong>5,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="entrantes">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Alitas BBQ"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Alitas BBQ</h3>
+          <p>Alitas de pollo con salsa barbacoa de la casa.</p>
+          <strong>7,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="entrantes">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Nachos"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Tequeños de queso</h3>
+          <p>Tequeños de queso fundido con salsa de tomate.</p>
+          <strong>6,00 €</strong>
+        </div>
+      </article>
+
+      <article class="tarjeta" data-category="postres">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Tarta de queso"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Tarta de queso</h3>
+          <p>Tarta cremosa de queso con base crujiente.</p>
+          <strong>5,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="postres">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Brownie"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Brownie</h3>
+          <p>Brownie de chocolate servido con helado de vainilla.</p>
+          <strong>6,00 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="postres">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Helado"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Tarta de 3 chocolates</h3>
+          <p>Tarta de tres capas de chocolate: chocolate blanco, chocolate negro y chocolate con leche.</p>
+          <strong>4,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="postres">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Gofre"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Coulan</h3>
+          <p>Coulan relleno de chocolate con bola de vainilla.</p>
+          <strong>6,50 €</strong>
+        </div>
+      </article>
+
+      <article class="tarjeta" data-category="bebidas">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Refresco"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Refresco</h3>
+          <p>Refresco frío a elegir.</p>
+          <strong>2,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="bebidas">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Limonada casera"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Cerveza</h3>
+          <p>Tercio de Cruzcampo</p>
+          <strong>2,50 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="bebidas">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Batido"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Vino</h3>
+          <p>Vino blanco o Vino tinto</p>
+          <strong>4,00 €</strong>
+        </div>
+      </article>
+      <article class="tarjeta" data-category="bebidas">
+        <div class="tarjeta-imagen-pendiente" role="img" aria-label="Espacio para la imagen de Agua"><span>Imagen pendiente</span></div>
+        <div class="tarjeta-texto">
+          <h3>Agua</h3>
+          <p>Agua mineral fría, con o sin gas.</p>
+          <strong>2,00 €</strong>
+        </div>
+      </article>
+      </div>
+    </fieldset>
   </section>
  
   <!-- SOBRE NOSOTROS -->
@@ -122,5 +235,6 @@
     </div>
   </footer>
  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
