@@ -129,6 +129,7 @@ h1, h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; }
   box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
 }
 .tarjeta img { height: 220px; background: #ddd; }
+.tarjeta img.imagen-refrescos { object-fit: cover; object-position: center; }
 .tarjeta-imagen-pendiente {
   height: 220px;
   display: grid;
