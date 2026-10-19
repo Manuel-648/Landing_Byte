@@ -2,7 +2,6 @@
 
 Sitio web estático para presentar **BITE Burgers**, un restaurante ficticio especializado en hamburguesas. El proyecto está hecho principalmente con HTML y CSS, con un pequeño archivo JavaScript para recordar la preferencia del tema visual(dark/light).
 
-## Qué incluye
 
 ### Página principal
 
