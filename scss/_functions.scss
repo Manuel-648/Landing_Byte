@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "sass:color";
+
+// Convierte px a rem (usa math.div, función nativa)
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Oscurece un color (usa color.adjust, función nativa)
+@function oscurecer($color, $porcentaje) {
+  @return color.adjust($color, $lightness: -$porcentaje);
+}
+
+// Cambia la opacidad de un color (usa color.change, función nativa)
+@function transparente($color, $alpha) {
+  @return color.change($color, $alpha: $alpha);
+}
+
+// Sombra reutilizable (usa rgba, función nativa)
+@function sombra($alpha: 0.08, $y: 4px, $blur: 14px) {
+  @return 0 $y $blur rgba(#000, $alpha);
+}

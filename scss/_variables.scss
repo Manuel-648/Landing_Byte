@@ -1,0 +1,59 @@
+// Colores
+$negro: #0d0d0d;
+$crema: #f4f2ee;
+$naranja: #e8581f;
+$blanco: #ffffff;
+$gris: #8a8a8a;
+
+// Tipografías
+$fuente-base: "DM Sans", sans-serif;
+$fuente-titulo: "Archivo Black", sans-serif;
+
+// Otros
+$radio-pildora: 999px;
+$bp-movil: 760px;
+$bp-pequeno: 480px;
+$categorias: hamburguesas, entrantes, postres, bebidas;
+
+// Mapa de colores (se convierte en variables CSS con un @each)
+$colores: (
+  negro: $negro,
+  crema: $crema,
+  naranja: $naranja,
+  blanco: $blanco,
+  gris: $gris,
+);
+
+// Tema claro
+$tema-claro: (
+  fondo-menu: $crema,
+  texto-menu: $negro,
+  fondo-tarjeta: $blanco,
+  texto-tarjeta: $negro,
+  texto-secundario-tarjeta: $gris,
+  fondo-formulario: $crema,
+  texto-formulario: $negro,
+  fondo-campos: $blanco,
+  borde-campos: #e7e5e1,
+  texto-secundario-formulario: #747474,
+  fondo-confirmacion: $blanco,
+  texto-confirmacion: $negro,
+  texto-secundario-confirmacion: #5f5f5f,
+);
+
+// Tema oscuro
+$tema-oscuro: (
+  fondo-menu: #171717,
+  texto-menu: #f4f2ee,
+  fondo-tarjeta: #242424,
+  texto-tarjeta: #ffffff,
+  texto-secundario-tarjeta: #c4c4c4,
+  fondo-formulario: #171717,
+  texto-formulario: #f4f2ee,
+  fondo-campos: #242424,
+  borde-campos: #3b3b3b,
+  texto-secundario-formulario: #c4c4c4,
+  fondo-confirmacion: $negro,
+  texto-confirmacion: $blanco,
+  texto-secundario-confirmacion: #d0d0d0,
+);

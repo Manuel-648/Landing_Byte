@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+// Media query para pantallas de móvil
+@mixin media-movil {
+  @media (max-width: $bp-movil) {
+    @content;
+  }
+}
+
+// Media query para pantallas muy pequeñas
+@mixin media-pequeno {
+  @media (max-width: $bp-pequeno) {
+    @content;
+  }
+}
+
+// Centra con flexbox (el gap es opcional)
+@mixin flex-centro($gap: 0) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+// Estilo base de un botón
+@mixin boton($fondo, $texto) {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: $radio-pildora;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  background: $fondo;
+  color: $texto;
+}
+
+// Oculta un elemento visualmente (accesibilidad)
+@mixin oculto-visualmente {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Convierte un mapa en variables CSS
+@mixin definir-variables($mapa) {
+  @each $nombre, $valor in $mapa {
+    --#{$nombre}: #{$valor};
+  }
+}
